@@ -84,4 +84,83 @@ Optional properties are properties that don't have to be defined in the object d
 Index Signatures
 Index signatures can be used for objects without a defined list of properties.
 
+    Enums
+An enum is a special "class" that represents a group of constants (unchangeable variables).
+Enums come in two flavors string and numeric.
+-Numeric Enums - Default
+By default, enums will initialize the first value to 0 and add 1 to each additional value.
+-Numeric Enums - Initialized
+You can set the value of the first numeric enum and have it auto increment from that
+-Numeric Enums - Fully Initialized
+You can assign unique number values for each enum value.
+Then the values will not incremented automatically
+-String Enums
+Enums can also contain strings. This is more common than numeric enums, because of their readability and intent.
+
+  Aliases and Interfaces
+TypeScript allows types to be defined separately from the variables that use them.
+Aliases and Interfaces allows types to be easily shared between different variables/objects.
+-Aliases
+Type Aliases allow defining types with a custom name (an Alias).
+Type Aliases can be used for primitives like string or more complex types such as objects and arrays.
+-Interfaces
+Interfaces are similar to type aliases, except they only apply to object types.
+Interfaces can extend each other's definition.
+Extending an interface means you are creating a new interface with the same properties as the original,
+plus something new.
+
+    Union Types( | )
+Union types are used when a value can be more than a single type.
+Such as when a property would be string or number.
+Using the | we are saying our parameter is a string or number.
+you need to know what your type is when union types are being used to avoid type errors
+
+    Functions
+-TypeScript has a specific syntax for typing function parameters and return values.
+-Return Type
+The type of the value returned by the function can be explicitly defined.
+If no return type is defined, 
+-TypeScript will attempt to infer(guess) it through the types of the variables or expressions returned.
+-The type 'void' can be used to indicate a function doesn't return any value.
+-Function parameters are typed with a similar syntax as variable declarations
+-Optional Parameters(?)
+By default TypeScript will assume all parameters are required, but they can be explicitly marked as optional.
+-For parameters with default values, the default value goes after the type annotation.
+-Typing named parameters follows the same pattern as typing normal parameters.
+-Rest parameters can be typed like normal parameters, but the type must be an array as rest parameters are always arrays.
+-Type Alias
+Function types can be specified separately from functions with type aliases.
+These types are written similarly to arrow functions, read more about arrow functions here.
+
+    Casting
+Casting is the process of overriding a type.
+    Casting with as
+A straightforward way to cast a variable is using the 'as' keyword, 
+which will directly change the type of the given variable.
+    Casting with <>
+Using <> works the same as casting with as.
+    Force casting
+To override type errors that TypeScript may throw when casting, first cast to unknown, then to the target type.
+
+    TypeScript Classes
+TypeScript adds types and visibility modifiers to JavaScript classes.
+-The members of a class (properties & methods) are typed using type annotations, similar to variables
+-Class members also be given special modifiers which affect visibility.
+There are three main visibility modifiers in TypeScript.
+1)public - (default) allows access to the class member from anywhere.
+2)private - only allows access to the class member from within the class.
+3)protected - allows access to the class member from itself and any classes that inherit it.
+
+-TypeScript provides a convenient way to define class members in the constructor, by adding a visibility modifiers to the parameter.
+-Similar to arrays, the readonly keyword can prevent class members from being changed.
+-Classes can extend each other through the extends keyword. A class can only extends one other class.
+
+    TypeScript Basic Generics
+Generics allow creating 'type variables' which can be used to create classes, functions & type aliases that don't need to explicitly
+define the types that they use.
+-Generics with functions help make more generalized methods which more accurately represent the types used and returned.
+-Generics can be used to create generalized classes, like Map.
+-Generics in type aliases allow creating types that are more reusable.
+
+
 
